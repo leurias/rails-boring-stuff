@@ -1,0 +1,50 @@
+version: "3.8"
+
+x-app: &default-app
+  build:
+    context: .
+    dockerfile: ./Dockerfile.dev
+  volumes:
+    - .:/app
+  env_file: .env
+  restart: unless-stopped
+
+services:
+  app:
+    <<: *default-app
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+      - redis
+
+  sidekiq:
+    <<: *default-app
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    depends_on:
+      - redis
+
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-123123}
+      - POSTGRES_DB=${POSTGRES_DB:-myapp_development}
+
+  redis:
+    image: redis:7.2.1-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
+  redis_data:

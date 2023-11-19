@@ -1,0 +1,9 @@
+development:
+  :concurrency: 1
+production:
+  :concurrency: 1
+  :verbose: false
+  :pidfile: .tmp/pids/sidekiq.pid
+  :logfile: .log/sidekiq.log
+:queues:
+  - default

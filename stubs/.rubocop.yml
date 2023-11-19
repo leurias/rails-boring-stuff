@@ -1,0 +1,27 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  Include:
+    - "spec/**/*"
+  Exclude:
+    - "lib/**/*"
+    - "bin/**/*"
+    - "db/schema.rb"
+
+Style/Documentation:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 10
+Layout/LineLength:
+  Max: 140
+RSpec/NestedGroups:
+  Max: 5
