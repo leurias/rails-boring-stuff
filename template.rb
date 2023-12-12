@@ -63,6 +63,8 @@ run 'bundle install'
 ## Copy Stubs
 ## --------------------------------------------------
 
+add_template_repository_to_source_path
+
 list_files.each do |file_path|
   copy_and_replace file_path
 end
