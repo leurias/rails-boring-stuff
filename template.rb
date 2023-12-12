@@ -22,8 +22,7 @@ def add_template_repository_to_source_path
 end
 
 def list_files
-  puts source_paths
-  base_path = File.join(__dir__, "stubs")
+  base_path = File.join(source_paths.first, "stubs")
   files_output = `find #{base_path} -type f -printf "%P\n"`
   files_array = files_output.split("\n")
   files_array
@@ -31,7 +30,7 @@ end
 
 def copy_and_replace(source, dest = nil)
   dest_file = dest.nil? ? source : dest
-  copy_file("stubs/#{source}", dest_file, force: true)
+  copy_file("#{source_paths.first}/stubs/#{source}", dest_file, force: true)
 end
 
 gem_group :development, :test do
