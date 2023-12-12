@@ -22,6 +22,7 @@ def add_template_repository_to_source_path
 end
 
 def list_files
+  puts source_paths
   base_path = File.join(__dir__, "stubs")
   files_output = `find #{base_path} -type f -printf "%P\n"`
   files_array = files_output.split("\n")
