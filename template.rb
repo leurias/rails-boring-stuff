@@ -78,6 +78,6 @@ say 'host: <%= ENV.fetch("DATABASE_HOST") %>'
 say 'username: <%= ENV.fetch("DATABASE_USERNAME") %>'
 say 'password: <%= ENV.fetch("DATABASE_PASSWORD") %>'
 say "\n"
-say "\n"
 say "Don't forget to migrate the database :)"
 say "rails db:migrate"
+say "\n"
