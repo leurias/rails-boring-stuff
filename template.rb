@@ -47,3 +47,13 @@ run 'bundle install'
 list_files.each do |file_path|
   copy_and_replace file_path
 end
+
+## --------------------------------------------------
+## Instructions
+## --------------------------------------------------
+say "\n"
+say 'Update your database.yml if you\'re not using the sqlite3 adapter, for example:'
+say 'host: <%= ENV.fetch("DATABASE_HOST") %>'
+say 'username: <%= ENV.fetch("DATABASE_USERNAME") %>'
+say 'password: <%= ENV.fetch("DATABASE_PASSWORD") %>'
+say "\n"
