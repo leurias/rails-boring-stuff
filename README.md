@@ -28,7 +28,7 @@ This Rails template streamlines the development process, allowing you to focus o
 ## Getting Started
 
 ```bash
-$ rails new <app-name> -d postgres|sqlite3 --api --skip-jbuilder -m https://github.com/leurias/rails-boring-stuff/blob/main/template.rb
+$ rails new <app-name> -d postgres|sqlite3 --api --skip-jbuilder -m https://raw.githubusercontent.com/leurias/rails-boring-stuff/main/template.rb
 ```
 
 ## Contributions
