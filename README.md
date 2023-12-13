@@ -2,10 +2,6 @@
 
 ## Rails Boring Stuff
 
-Welcome to the Easier Life.
-
-## Overview
-
 This Rails template streamlines the development process, allowing you to focus on the essentials. It comes packed with efficient configurations and conventions to handle the mundane tasks, giving you more time to build something extraordinary.
 
 ## Features
