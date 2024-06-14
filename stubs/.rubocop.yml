@@ -4,7 +4,6 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRubyVersion: 3.1
   NewCops: enable
   Include:
     - "spec/**/*"
@@ -13,15 +12,11 @@ AllCops:
     - "bin/**/*"
     - "db/schema.rb"
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 RSpec/MultipleExpectations:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
-RSpec/ExampleLength:
-  Max: 10
-Layout/LineLength:
-  Max: 140
-RSpec/NestedGroups:
-  Max: 5
